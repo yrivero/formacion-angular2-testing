@@ -9,7 +9,7 @@ describe('ButtonWithServiceComponent, state based testing', () => {
 
   /* Mock implementation */
   const mockRandom: RandomNumberService = {
-    getRandomNumber(min?: number, max?: number) : number {
+    getRandomNumber(min?: number, max?: number): number {
       if (shouldThrowAnError) {
         throw new Error('I was asked to throw an error...');
       } else {
@@ -22,6 +22,8 @@ describe('ButtonWithServiceComponent, state based testing', () => {
 
   beforeEach(() => {
     button = new ButtonWithServiceComponent(mockRandom);
+    shouldThrowAnError = null;
+    numberToServe = null;
   });
 
   /*
