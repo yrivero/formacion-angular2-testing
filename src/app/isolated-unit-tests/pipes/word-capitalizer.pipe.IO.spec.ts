@@ -1,5 +1,6 @@
 
 import {WordCapitalizerPipe} from './word-capitalizer.pipe';
+
 describe('WordCapitalizerPipe, I/O testing', () => {
 
   /*
@@ -9,7 +10,7 @@ describe('WordCapitalizerPipe, I/O testing', () => {
   let pipe: WordCapitalizerPipe;
 
   beforeEach(() => {
-    pipe = new WordCapitalizerPipe()
+    pipe = new WordCapitalizerPipe();
   });
 
 
