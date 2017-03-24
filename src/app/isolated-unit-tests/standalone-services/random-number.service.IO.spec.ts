@@ -42,5 +42,10 @@ describe('RandomNumberService, I/O testing', () => {
     expect(randomNumber).toBeLessThanOrEqual(10);
   });
 
+  it('With negative number, should throw an exception', () => {
+    expect(() => service.getRandomNumber(-1, 10)).toThrowError();
+  });
+
+
 
 });

@@ -23,4 +23,8 @@ describe('CompositeRandomNumberService, I/O testing', () => {
     expect(randomNumber).toBeLessThanOrEqual(1000);
   });
 
+  it('With negative number, should throw an exception', () => {
+    expect(() => service.getRandomNumber(-1, 10)).toThrowError();
+  });
+
 });

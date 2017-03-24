@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 
 
-@Injectable()
+//@Injectable()
 export class RandomNumberService {
 
   getRandomNumber(min?: number, max?: number) : number {
@@ -12,11 +12,14 @@ export class RandomNumberService {
       max = 1;
     } else if ((!min || min == null) && max) {
       // No min value, assume lowest possible
-      min = Number.MIN_VALUE;
+        if(max > 1000) throw Error();
+         min = Number.MIN_VALUE;
     } else if ((!max || max == null) && min) {
       // No max value, assume highest possible
+      if(min < 0) throw Error();
       max = Number.MAX_VALUE;
     } else {
+      if(max > 1000 || min < 0) throw Error();
       // Both numbers specified
     }
 
